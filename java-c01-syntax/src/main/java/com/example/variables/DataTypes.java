@@ -1,4 +1,5 @@
-package com.example;
+package com.example.variables;
+
 
 public class DataTypes {
 
@@ -19,6 +20,7 @@ public class DataTypes {
         System.out.println(number2);
         System.out.println(number3);
         System.out.println(number4);
+        System.out.println(number1 + " " + number2 + " " + number3 + " " + number4);
 
         // 2. numéricos decimales
         float number5 = 19.99f;
