@@ -18,6 +18,18 @@ public class MethodsReturn {
 
         // función suma
         double totalPrice = sum(price1, price2);
+        System.out.println(totalPrice);
+
+        // función multiplicación
+        double total = multiply(10, 20);
+        System.out.println(total);
+
+        // devolver mensaje de bienvenida para un nombre concreto
+        String text = getMessage("Alan");
+        System.out.println(text);
+
+        text = getMessage("");
+        System.out.println(text);
     }
 
     public static double calculateIVA(double price){
@@ -25,9 +37,19 @@ public class MethodsReturn {
     }
 
     public static double sum(double price1, double price2){
-        return 0d;
+        return price1 + price2;
     }
 
+    public static double multiply(double number1, double number2){
+        return number1 * number2;
+    }
 
+    public static String getMessage(String name){
+        boolean isEmpty = name.length() == 0;
+        if(isEmpty)
+            return "Welcome user";
+
+        return "Welcome " + name;
+    }
 
 }
