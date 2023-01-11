@@ -33,21 +33,34 @@ public class MethodsReturn {
     }
 
     public static double calculateIVA(double price){
+        // comentario
         return price + price * IVA;
     }
 
     public static double sum(double price1, double price2){
+        /*
+        Comentario multilínea
+         */
         return price1 + price2;
     }
 
+    /**
+     * Función que multiplica dos números double
+     * @param number1 double mayor que cero
+     * @param number2 double mayor que cero
+     * @return double resultado de la multiplicación
+     */
     public static double multiply(double number1, double number2){
         return number1 * number2;
     }
 
     public static String getMessage(String name){
         boolean isEmpty = name.length() == 0;
-        if(isEmpty)
+
+        if(isEmpty) {
+            System.out.println("Se cumple el IF");
             return "Welcome user";
+        }
 
         return "Welcome " + name;
     }
