@@ -32,5 +32,9 @@ public class StringBlocks {
                     </html>
                 """;
         System.out.println(text3);
+
+        String text4 = "lorem khfjsdjfg \n" +
+                "sdfsdfsdfsdf" +
+                "asfasfadsfasfd";
     }
 }
