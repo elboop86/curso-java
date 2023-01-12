@@ -8,5 +8,8 @@ public class StringContains {
 
         boolean contains = text.contains("hola");
         System.out.println(contains);
+
+        boolean start = text.startsWith("h");
+        boolean end = text.endsWith("a");
     }
 }
