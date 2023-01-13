@@ -67,4 +67,30 @@ public class Vehicle {
     public void turnOff(){
         this.status = false;
     }
+
+
+    // NULL CHECKING: comprobar si un valor es nulo (null) antes de utilizarlo
+    // para evitar excepciones NullPointerException
+
+    // método que devuelva el modelo completo: Ford Fiesta 1.2 (1999)
+    public String getFullName(){
+        String manufacturer = "manufacturer";
+        String model = "model";
+
+        if(this.manufacturer != null)
+            manufacturer = this.manufacturer;
+
+        if(this.model != null)
+            model = this.model;
+
+        return manufacturer + " " + model + " " + this.cc;
+    }
+
+    // condicion ? valor_si : valor_no;
+    // this.manufacturer != null ? this.manufacturer : "default"
+//    public String getFullName(){
+//        String manufacturer = this.manufacturer != null ? this.manufacturer : "defaultManufacturer";
+//        String model = this.model != null ? this.model : "defaultModel";
+//        return manufacturer + " " + model + " " + this.cc;
+//    }
 }

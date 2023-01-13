@@ -33,6 +33,7 @@ public class If {
         }
 
         // operador ternario
+        // condicion ? valor_si : valor_no;
         double price = 20.0d;
         double shipCost = price > 100.0d ? 0d : 5.5d;
         System.out.println(shipCost);

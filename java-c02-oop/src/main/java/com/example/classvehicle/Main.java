@@ -25,7 +25,14 @@ public class Main {
 
         alfaRomeo.turnOff();
 
-        // TODO imprimir modelo completo
-        // TODO agregar precio
+        // Evolucionar la clase Vehicle
+        // imprimir modelo completo
+        String alfaRomeoFullName = alfaRomeo.getFullName();
+        System.out.println(alfaRomeoFullName);
+
+        Vehicle vehicle1 = new Vehicle();
+        System.out.println(vehicle1.getFullName());
+
+        // TODO agregar precio, año
     }
 }
