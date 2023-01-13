@@ -98,4 +98,22 @@ public class Vehicle {
 //        String model = this.model != null ? this.model : "defaultModel";
 //        return manufacturer + " " + model + " " + this.cc;
 //    }
+
+
+    // SOBRESCRITURA de métodos. Sobreescribe el método toString de la clase Object
+
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "manufacturer='" + manufacturer + '\'' +
+                ", model='" + model + '\'' +
+                ", cc=" + cc +
+                ", type='" + type + '\'' +
+                ", speed=" + speed +
+                ", status=" + status +
+                ", price=" + price +
+                ", year=" + year +
+                '}';
+    }
 }
