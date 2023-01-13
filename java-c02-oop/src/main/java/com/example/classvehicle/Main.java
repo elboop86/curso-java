@@ -6,9 +6,12 @@ public class Main {
 
         System.out.println("Velocidad máxima: " + Vehicle.MAX_SPEED);
 
-        Vehicle fordFiesta = new Vehicle("Ford", "Fiesta", 1.2, "SEDAN", 0, false);
+        Vehicle fordFiesta = new Vehicle("Ford", "Fiesta", 1.2, "SEDAN", 0, false, 20000.0, 2005);
         System.out.println(fordFiesta.manufacturer);
+        System.out.println(fordFiesta.price);
+        System.out.println(fordFiesta.year);
 
+        Vehicle hondaCivic = new Vehicle("Honda Civic", "149", 1.9, "SEDAN");
         Vehicle alfaRomeo = new Vehicle("Alfa Romeo", "149", 1.9, "SEDAN");
 
         // los métodos cambian el estado del vehículo es decir,
@@ -32,7 +35,5 @@ public class Main {
 
         Vehicle vehicle1 = new Vehicle();
         System.out.println(vehicle1.getFullName());
-
-        // TODO agregar precio, año
     }
 }

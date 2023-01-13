@@ -21,23 +21,28 @@ public class Vehicle {
     String type;
     int speed;
     boolean status;
+    double price;
+    int year;
 
     // 3. constructores
     public Vehicle() {
     }
-    public Vehicle(String manufacturer, String model, double cc, String type, int speed, boolean status) {
+    public Vehicle(String manufacturer, String model, double cc, String type, int speed, boolean status, double price, int year) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.cc = cc;
         this.type = type;
         this.speed = speed;
         this.status = status;
+        this.price = price;
+        this.year = year;
     }
     public Vehicle(String manufacturer, String model, double cc, String type) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.cc = cc;
         this.type = type;
+        this.year = 1950; // valor por defecto para año de fabricación de los coches
         // no haría falta ponerles el valor por defecto,
         // ya que al ser datos primitivos ya se inicializan a 0 y false
         // this.speed = 0;
