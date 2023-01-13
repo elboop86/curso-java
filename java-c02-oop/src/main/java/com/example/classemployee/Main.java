@@ -1,4 +1,4 @@
-package com.example;
+package com.example.classemployee;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,5 +23,15 @@ public class Main {
 
         // Ctrl + P dentro de paréntesis muestra las distintas opciones disponibles
         Employee employee4 = new Employee("emp4", "surname", "88877796L", "emp4@email.com", 1000.0, 40);
+
+        System.out.println(employee4.name);
+
+        // no static, no podemos acceder sin crear un objeto de Employee
+        // System.out.println(Employee.name);
+
+        // static, podemos acceder sin crear un objeto,
+        // ya que static hace que la variable pertenezca a la clase no a los objetos
+        System.out.println(Employee.BONUS);
+
     }
 }

@@ -1,6 +1,10 @@
-package com.example;
+package com.example.classemployee;
 
 public class Employee {
+
+    // constantes
+    // static hace que pertenezca a la clase, permite acceder sin crear objeto
+    public static final double BONUS = 500;
 
     // atributos/propiedades
     String name;
