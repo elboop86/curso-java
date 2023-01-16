@@ -1,6 +1,4 @@
-package com.example.encapsulation;
-
-import java.util.StringJoiner;
+package com.example.encapsulation.attributes;
 
 public class Project {
 

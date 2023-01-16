@@ -1,4 +1,4 @@
-package com.example.encapsulation;
+package com.example.encapsulation.attributes;
 
 
 /*
