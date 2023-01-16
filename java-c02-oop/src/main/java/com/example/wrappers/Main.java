@@ -37,5 +37,21 @@ public class Main {
         // boolean
         boolean isValid1 = true;
         Boolean isValid2 = false;
+
+        /*
+        Los tipos envoltorio al ser clases proporcionan métodos para trabajar con su respectivo
+        tipo de dato
+         */
+
+        Integer result = Integer.max(5, 10);
+        System.out.println(result);
+
+        String number = "10";
+        Integer number10 = Integer.valueOf(number);
+        System.out.println(number10);
+
+
+
+
     }
 }
