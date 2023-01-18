@@ -110,3 +110,32 @@ Un ejemplo: sirven para filtrar un dato en base a esa enumeración. Por ejemplo:
 
 ## 6. Asociaciones entre clases
 
+Una clase puede tener relación con otra clase.
+
+
+### Asociación 1 elemento
+
+Por ejemplo: Producto puede tener un fabricante.
+
+```java
+public class Product {
+
+	private Manufacturer manufacturer;
+
+}
+```
+
+A la hora de crear el producto, hay que especificar el fabricante:
+
+```java
+Manufacturer samsung = new Manufacturer();
+Product product1 = new Product("prod1", 19.99d, 2, "green", 167, samsung);
+```
+
+
+### Asociación n elementos
+
+
+
+
+
