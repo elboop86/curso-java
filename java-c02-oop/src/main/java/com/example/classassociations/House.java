@@ -65,4 +65,20 @@ public class House {
                 ", energyLevel=" + energyLevel +
                 '}';
     }
+
+    public int calculateM2Rooms() {
+        int totalM2 = 0;
+
+        for (Room room: this.getRooms()) {
+            if(room.getM2() != null)
+                totalM2 += room.getM2();
+        }
+
+        return totalM2;
+    }
+
+    public int calculateM2Halls(){
+
+        return m2 - this.calculateM2Rooms();
+    }
 }

@@ -135,6 +135,14 @@ Product product1 = new Product("prod1", 19.99d, 2, "green", 167, samsung);
 
 ### Asociación n elementos
 
+Cuando una clase está asociada con otra clase y múltiples objetos de esa clase.
+
+```java
+public class House {  
+  
+    private Room[] rooms;
+}
+```
 
 
 
