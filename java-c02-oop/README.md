@@ -35,33 +35,43 @@ Clases envoltorio (wrappers)
   * Integer, Long, Float, Double, Character, Boolean 
   * Admiten ``null`` como valor
 
+
 ## 2. Objetos
 
-Creación de objetos con la palabra `new` utilizando los diferentes constructores
+Creación de objetos con la palabra `new` utilizando los diferentes constructores.
+
+Ejemplo:
+
+```java
+Manufacturer samsung = new Manufacturer("Samsung", "1234A", 1980);
+Manufacturer apple = new Manufacturer();
+```
 
 
-## 3. Modificador ``static``
-  * Indica que un atributo o método pertenece a una clase y por tanto no es necesario crear un objeto para usarlo
+## 3. Modificador static
+
+Indica que un atributo o método pertenece a una **clase** y por tanto no es necesario crear un objeto para usarlo
 
 Ejemplo `static` sobre atributo:
 
 ```java
-    public static final Double PI = 3.14;
+public static final Double PI = 3.14;
 ```
 
 Ejemplo `static` sobre método:
 
 ```java
-    public static double sum(int num1, int num2){
-        return num1 + num2;
-    }
+public static double sum(int num1, int num2){
+	return num1 + num2;
+}
 ```
 
 
-## 4. Encapsulación:
+## 4. Encapsulación
 
-Mecanismo para modificar la visibilidad y hacer aplicaciones más seguras permitiendo restringir 
-cómo se modifican los atributos.
+Mecanismo para modificar la visibilidad y hacer aplicaciones más seguras permitiendo restringir cómo se modifican los atributos.
+
+El modificador `private` permite restringir el acceso directo a atributos y métodos, con el fin de acceder de una forma más segura a través de métodos ``getter`` y ``setter``.
 
 * `public`: accesible desde fuera por cualquier clase
 * `private`: accesible únicamente desde la propia clase
@@ -78,13 +88,25 @@ Dónde aplicar la encapsulación:
 
 ## 5. Enums
 
-Una enumeración o ``enum`` es un tipo de dato especial que representa una agrupación de constantes:
+Una enumeración o ``enum`` es un tipo de dato especial que representa una agrupación de constantes.
+
+Crear una enumeración:
 
 ```java
-
-public enum{
-
+public enum ProductCategory {  
+    ELECTRONIC_DEVICES, FOOD, BOOKS  
 }
-
 ```
+
+Usar la enumeración:
+
+```java
+ProductCategory.ELECTRONIC_DEVICES
+```
+
+Se usa normalmente para agrupar un número fijo de datos como por ejemplo: días de la semana o categorías de producto (cuando hay pocas).
+
+Un ejemplo: sirven para filtrar un dato en base a esa enumeración. Por ejemplo: filtrar productos por categoría.
+
+## 6. Asociaciones entre clases
 

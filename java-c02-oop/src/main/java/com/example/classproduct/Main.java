@@ -34,16 +34,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 0. Crear fabricantes
+
+        // Crear fabricantes
         Manufacturer samsung = new Manufacturer("Samsung", "1234A", 1980);
         Manufacturer apple = new Manufacturer("Apple", "2222B", 1970);
 
         // 1. Crear productos (CLASE PRODUCTO ASOCIADA CON CLASE MANUFACTURER)
-        Product product1 = new Product("prod1", 19.99d, 2, "green", 167, samsung);
-        Product product2 = new Product("silla ergonómica", 450d, 1, "gray", 30000, samsung);
-        Product product3 = new Product("silla gaming", 800d, 1, "gray", 20000, samsung);
-        Product product4 = new Product("mesa", null, 1, "gray", 30000, apple);
-        Product product5 = new Product("lámpara", 1200d, 1, "gray", 30000, apple);
+        Product product1 = new Product("prod1", 19.99d, 2, "green", 167, samsung, ProductCategory.ELECTRONIC_DEVICES);
+        Product product2 = new Product("silla ergonómica", 450d, 1, "gray", 30000, samsung, ProductCategory.FOOD);
+        Product product3 = new Product("silla gaming", 800d, 1, "gray", 20000, samsung, ProductCategory.BOOKS);
+        Product product4 = new Product("mesa", null, 1, "gray", 30000, apple, ProductCategory.BOOKS);
+        Product product5 = new Product("lámpara", 1200d, 1, "gray", 30000, apple, ProductCategory.FOOD);
 
         // 2. Crear un array de productos
         Product[] products = {product1, product2, product3, product4, product5};
