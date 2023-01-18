@@ -34,44 +34,32 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // 1. Crear productos
         Product product1 = new Product("prod1", 19.99d, 2, "green", 167);
         Product product2 = new Product("silla ergonómica", 450d, 1, "gray", 30000);
         Product product3 = new Product("silla gaming", 800d, 1, "gray", 20000);
         Product product4 = new Product("mesa", null, 1, "gray", 30000);
         Product product5 = new Product("lámpara", 1200d, 1, "gray", 30000);
 
-
-        // Crear un array de productos
+        // 2. Crear un array de productos
         Product[] products = {product1, product2, product3, product4, product5};
 
-        // calcular precio total
-        double sumPrice = 0d;
-        int countWithPrice = 0; // 4 en vez de 5
+        // 3. Crear objeto para cálculo de estadísticas de productos
+        ProductStats productStats = new ProductStats();
 
-        for (int i = 0; i < products.length; i++) {
-            if (products[i].getPrice() != null) {
-                sumPrice += products[i].getPrice();
-                countWithPrice++;
-            }
-        }
+        // 4. Calcular estadísticas
+        double totalPrice = productStats.sumPrices(products);
+        int count = productStats.count(products);
+        double avgPrice = productStats.avgPrices(products);
+        double maxPrice = productStats.maxPrice(products);
+        double minPrice = productStats.minPrice(products);
+        double stockPrice = productStats.sumPricesByQuantity(products);
 
-        // Calcular la media de precio de los productos del array
-        // double avgPrice = sumPrice / products.length;
-        double avgPrice = sumPrice / countWithPrice;
-
-        // Calcular el precio máximo
-        double maxPrice = 0d;
-        for (Product product : products) {
-            if (product.getPrice() != null && product.getPrice() > maxPrice)
-                maxPrice = product.getPrice();
-        }
-
-        // imprimir estadísticas
-        System.out.println("Numero total de productos: " + products.length);
-        System.out.println("Numero de productos con precio asignado: " + countWithPrice);
-        System.out.println("Precio total de los productos: " + sumPrice);
+        // 5. imprimir estadísticas
         System.out.println("Precio medio de los productos: " + avgPrice);
-        System.out.println("Precio maximo de los productos: " + maxPrice);
+        System.out.println("Precio medio de los productos: " + avgPrice);
+        System.out.println("Precio mas barato " + minPrice);
+        System.out.println("Precio stock total " + stockPrice);
 
     }
 }

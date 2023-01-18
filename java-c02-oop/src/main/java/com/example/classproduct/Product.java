@@ -10,7 +10,8 @@ public class Product {
     private Integer weight;
 
     // constructores
-    public Product(){}
+    public Product() {
+    }
 
     public Product(String name, Double price, Integer quantity, String color, Integer weight) {
         this.name = name;
@@ -18,6 +19,7 @@ public class Product {
         this.quantity = quantity;
         this.color = color;
         this.weight = weight;
+        // Otra opción: se pueden inicializar los atributos utilizando setter en caso de que haya comprobaciones
     }
 
     // getter setter

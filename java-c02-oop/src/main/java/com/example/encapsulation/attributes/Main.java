@@ -17,7 +17,8 @@ public class Main {
 
         // los atributos encapsulados (private) no se pueden
         // modificar directamente
-        // project1.title = "prj2";
+        // project1.title = "99999988888";
+        project1.setTitle("99999988888");
         // project1.numDevelopers = -5;
 
         // MÉTODOS GETTER: acceder a atributos
