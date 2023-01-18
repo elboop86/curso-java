@@ -8,18 +8,20 @@ public class Product {
     private Integer quantity;
     private String color;
     private Integer weight;
+    private Manufacturer manufacturer;
 
     // constructores
     public Product() {
     }
 
-    public Product(String name, Double price, Integer quantity, String color, Integer weight) {
+    // Otra opción: se pueden inicializar los atributos utilizando setter en caso de que haya comprobaciones
+    public Product(String name, Double price, Integer quantity, String color, Integer weight, Manufacturer manufacturer) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.color = color;
         this.weight = weight;
-        // Otra opción: se pueden inicializar los atributos utilizando setter en caso de que haya comprobaciones
+        this.manufacturer = manufacturer;
     }
 
     // getter setter
@@ -64,8 +66,14 @@ public class Product {
         this.weight = weight;
     }
 
+    public Manufacturer getManufacturer() {
+        return manufacturer;
+    }
 
-    // tostring
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+// tostring
 
     @Override
     public String toString() {

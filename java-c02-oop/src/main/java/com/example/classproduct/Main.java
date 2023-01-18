@@ -34,12 +34,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 1. Crear productos
-        Product product1 = new Product("prod1", 19.99d, 2, "green", 167);
-        Product product2 = new Product("silla ergonómica", 450d, 1, "gray", 30000);
-        Product product3 = new Product("silla gaming", 800d, 1, "gray", 20000);
-        Product product4 = new Product("mesa", null, 1, "gray", 30000);
-        Product product5 = new Product("lámpara", 1200d, 1, "gray", 30000);
+        // 0. Crear fabricantes
+        Manufacturer samsung = new Manufacturer("Samsung", "1234A", 1980);
+        Manufacturer apple = new Manufacturer("Apple", "2222B", 1970);
+
+        // 1. Crear productos (CLASE PRODUCTO ASOCIADA CON CLASE MANUFACTURER)
+        Product product1 = new Product("prod1", 19.99d, 2, "green", 167, samsung);
+        Product product2 = new Product("silla ergonómica", 450d, 1, "gray", 30000, samsung);
+        Product product3 = new Product("silla gaming", 800d, 1, "gray", 20000, samsung);
+        Product product4 = new Product("mesa", null, 1, "gray", 30000, apple);
+        Product product5 = new Product("lámpara", 1200d, 1, "gray", 30000, apple);
 
         // 2. Crear un array de productos
         Product[] products = {product1, product2, product3, product4, product5};
@@ -56,9 +60,11 @@ public class Main {
         double stockPrice = productStats.sumPricesByQuantity(products);
 
         // 5. imprimir estadísticas
-        System.out.println("Precio medio de los productos: " + avgPrice);
+        System.out.println("Precio total de los productos: " + totalPrice);
+        System.out.println("Número productos: " + count);
         System.out.println("Precio medio de los productos: " + avgPrice);
         System.out.println("Precio mas barato " + minPrice);
+        System.out.println("Precio mas caro " + maxPrice);
         System.out.println("Precio stock total " + stockPrice);
 
     }
