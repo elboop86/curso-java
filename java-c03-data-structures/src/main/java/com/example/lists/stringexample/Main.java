@@ -1,4 +1,4 @@
-package com.example.lists;
+package com.example.lists.stringexample;
 
 import java.util.ArrayList;
 import java.util.List;
