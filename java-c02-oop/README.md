@@ -150,5 +150,93 @@ public class House {
 ### Listas
 
 
+## Set
+
+## Mapa
 
 
+## 8. Interfaces
+
+
+### Ejemplo 1:
+
+* Interfaz: ComputerDatabase
+	* Implementación 1 (clase): ComputerListDatabase
+	* Implementación 2 (clase): ComputerSetDatabase
+
+Main -> ComputerDatabase
+* new ComputerListDatabase() o new ComputerSetDatabase()
+
+
+### Ejemplo 2:
+
+* Interfaz: ProductDatabase
+	* Implementación 1 (clase): ProductMySQLDatabase
+	* Implementación 2 (clase): ProductPostgreSQLDatabase
+	* Implementación 3 (clase): ProductMongoDBDatabase
+	* Implementación 4 (clase): ProductExcelDatabase
+
+Main -> ProductDatabase (interfaz):
+* findAll()
+* save()
+* findById()
+* update()
+* remove()
+![[interfaces.png]]
+
+La interfaz actúa como contrato/plantilla/intermediario y dice lo que hay que hacer (findAll, findById, save) pero no lo hace, quien lo hace son las clases implementación.
+
+Esto permite que la clase Main pueda cambiar una implementación por otra sin tener que cambiar nada más, por todas implementan los mismos métodos, todas hacen lo mismo.
+
+### Abstracto vs concreto
+
+* **Abstracto**: una interfaz, no implementa métodos, solo los declara, no tienen cuerpo.
+* **Concreto**: una clase, sí implementa métodos, se les llama implementaciones o clases concretas
+
+Permite cumplir con un principio SOLID:
+
+**Principio de inversión de la dependencia (DIP)**: Según este principio, las clases (por ejemplo Main) sólo deben depender de las abstracciones y no de sus implementaciones concretas.
+
+### Usar una interfaz
+
+No:
+
+```java
+ComputerDatabase computerDatabase = new ComputerDatabase();
+```
+
+No: 
+
+```java
+ComputerSetDatabase computerDatabase = new ComputerSetDatabase();
+```
+
+Sí: 
+
+```java
+ComputerDatabase computerDatabase = new ComputerSetDatabase();
+```
+
+Sí: 
+
+```java
+ComputerDatabase computerDatabase = new ComputerListDatabase();
+```
+
+
+### Ejemplo más cotidiano
+
+Tarea 1 : dar de comer a un caballo
+Empleado 1: da de comer al caballo tirando la alfafa por encima
+Empleado 2: da de comer al caballo poniendo la alfalfa en el suelo
+Empleado 3: da de comer al caballo poniendo la alfalfa en un cubo
+
+La tarea común es "dar de comer al caballo" y cada empleado hace esa tarea y logra el mismo objetivo pero de forma diferente.
+
+
+Tarea 1: extraer productos de una base de datos
+Implementación 1 (mysql): trae los productos haciendo una consulta SELECT a MySQL
+Implementación 2 (postgresql): trae los productos haciendo consulta SELECT a PostgreSQL
+Implementación 3 (mongodb): trae los productos haciendo una query a MongoDB
+
+La tarea común es "traer los productos almacenados" y cada implementación hace esa tarea y logra el mismo objetivo pero utilizando una base de datos diferentes.
