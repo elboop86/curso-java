@@ -27,7 +27,7 @@ public class Main {
         cars.add(car2Duplicated); // duplicado
         cars.add(car3);
 
-        System.out.println(cars);
+        System.out.println(cars); // no aparecen los duplicados
 
 
     }
