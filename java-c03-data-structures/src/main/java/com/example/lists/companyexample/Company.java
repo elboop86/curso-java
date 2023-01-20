@@ -7,6 +7,7 @@ public class Company {
     private String name;
     private String cif;
     private ArrayList<Employee> employees = new ArrayList<>();
+    //private HashSet<CreditCard> creditCards = new HashSet<>();
 
     public Company() {
     }

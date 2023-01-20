@@ -53,17 +53,28 @@ public class Main {
 
         // extraer los coches a partir de las companies
 
+        // Para evitar duplicados es mejor utilizar HashSet e implementar los métodos equals() y hashcode()  en Car
         ArrayList<Car> allCars = new ArrayList<>();
 
         for (Company company : companies) {
-            for(Employee employee : company.getEmployees()){
+            for (Employee employee : company.getEmployees()) {
                 allCars.addAll(employee.getCars());
             }
         }
 
-        for (Car car : allCars){
+        for (Car car : allCars) {
             System.out.println(car);
         }
+
+        // Jose Ignacio:
+        for (Company company : companies) {
+            for (Employee employee : company.getEmployees()) {
+                for (Car car : employee.getCars()) {
+                    System.out.println(car.toString());
+                }
+            }
+        }
+
 
     }
 }
