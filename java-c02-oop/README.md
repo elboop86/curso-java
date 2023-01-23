@@ -285,6 +285,7 @@ ComputerSetDatabase computerDatabase = new ComputerSetDatabase();
 Sí: 
 
 ```java
+// a la izquierda la interfaz y a la derecha la clase
 ComputerDatabase computerDatabase = new ComputerSetDatabase();
 ```
 
@@ -311,3 +312,15 @@ Implementación 2 (postgresql): trae los productos haciendo consulta SELECT a Po
 Implementación 3 (mongodb): trae los productos haciendo una query a MongoDB
 
 La tarea común es "traer los productos almacenados" y cada implementación hace esa tarea y logra el mismo objetivo pero utilizando una base de datos diferentes.
+
+### Polimorfismo
+
+```java
+
+// A la izquierda la interfaz y a la derecha la clase (formas)
+Saludo saludo1 = new SaludoFormal();
+Saludo saludo2 = new SaludorInformal();
+```
+
+### instanceof
+
