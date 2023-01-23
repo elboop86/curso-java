@@ -149,14 +149,74 @@ public class House {
 
 ### Listas
 
+Una lista es un array dinámico, es decir, permite agregar nuevos elementos pero también borrarlos, actualizarlos, recuperarlos (CRUD).
 
-## Set
+CRUD: Create Retrieve/Read Update Delete.
 
-## Mapa
+* Admiten duplicados
+* Conservan el orden, los elementos se añaden uno a continuación del otro
+
+```java
+ArrayList<String> names = new ArrayList<>();
+
+ArrayList<Company> companies = new ArrayList<>();
+
+var employees = new ArrayList<Employee>();
+
+// usando interfaces: polimorfismo
+List<Employee> employees = new ArrayList<>();
+```
+
+### Set
+
+Un conjunto es una estructura de datos que no admite duplicados y tampoco conserva el orden por lo que puede ser más óptimo que una lista dinámica.
+
+* No admite duplicados: para que esto funcione correctamente con nuestras propias clases es necesario implementar los siguientes métodos en una clase: ``equals()`` y ``hashCode()``
+* No conservan el orden
+
+```java
+HashSet<String> names = new HashSet<>();
+
+HashSet<Company> companies = new HashSet<>();
+
+var employees = new HashSet<Employee>();
+
+// usando interfaces: polimorfismo
+// izquierda el tipo abstracto (interfaz) y a la derecha la clase concreta
+Set<Employee> employees = new HashSet<>();
+
+```
+
+### Mapa
+
+Estructura de pares de clave valor. 
+
+* Las claves tienen que ser únicas
+* El valor se puede repetir
+* Se puede utilizar para agrupar datos en base a claves
+
+```java
+HashMap<String, String> names = new HashMap<>();
+
+HashMap<String, Company> companies = new HashMap<>();
+
+var employees = new HashMap<String, Employee>();
+
+// usando interfaces: polimorfismo
+// izquierda el tipo abstracto (interfaz) y a la derecha la clase concreta
+Map<String, Employee> employees = new HashMap<>();
+```
 
 
 ## 8. Interfaces
 
+Una interfaz es un mecanismo de programación orientada a objetos para promover el código limpio y desacoplado con mejor mantenibilidad.
+
+Declara métodos. Es necesario crear clases que implementen métodos de las interfaces para poder usarlas.
+
+* Es considerado un **tipo abstracto** porque no proporciona el código de los métodos, solo los declara
+
+Nota: no confundir con interfaces de usuario.
 
 ### Ejemplo 1:
 
@@ -188,6 +248,15 @@ La interfaz actúa como contrato/plantilla/intermediario y dice lo que hay que h
 
 Esto permite que la clase Main pueda cambiar una implementación por otra sin tener que cambiar nada más, por todas implementan los mismos métodos, todas hacen lo mismo.
 
+
+### Ejemplo 3
+
+Un coche tiene un filtro de aceite que puede ser reemplazado por otro filtro de aceite en cualquier momento.
+
+En este caso el hueco del filtro de aceite y la acción filtrar aceite serían la interfaz, mientras que un filtro en concreto sería la implementación la cuál podemos quitar y poner otra en cualquier momento y que todo siga exactamente igual.
+
+Si de lo contrario el filtro va soldado al motor (sin interfaz), entonces para cambiarlo obliga a cambiar medio motor.
+
 ### Abstracto vs concreto
 
 * **Abstracto**: una interfaz, no implementa métodos, solo los declara, no tienen cuerpo.
@@ -196,6 +265,8 @@ Esto permite que la clase Main pueda cambiar una implementación por otra sin te
 Permite cumplir con un principio SOLID:
 
 **Principio de inversión de la dependencia (DIP)**: Según este principio, las clases (por ejemplo Main) sólo deben depender de las abstracciones y no de sus implementaciones concretas.
+
+Sirven para promover código limpio, código desacoplado y evitar código spaguetti.
 
 ### Usar una interfaz
 

@@ -41,7 +41,7 @@ public class Main {
         boolean exists = identities.containsKey("333333C");
         System.out.println(exists);
 
-        identities.putIfAbsent("111111A", "Rodolfo García superevolucionado");
+        identities.putIfAbsent("111111A", "Rodolfo García superevolucionado"); // no cambia el valor asociado a la clave
         System.out.println(identities);
 
         System.out.println(identities.keySet()); // claves
