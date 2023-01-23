@@ -1,7 +1,6 @@
 package com.example.interfaces;
 
 public class Main {
-    ComputerDatabase computerDatabase;
 
     public static void main(String[] args) {
 
@@ -18,8 +17,9 @@ public class Main {
 
 
         // tipo abstracto (interfaz)                 tipo concreto (clase)
-        ComputerDatabase computerDatabase = new ComputerListDatabase();
-//        ComputerDatabase computerDatabase = new ComputerSetDatabase();
+//        ComputerDatabase computerDatabase = new ComputerListDatabase();
+        ComputerDatabase computerDatabase = new ComputerSetDatabase();
+//        ComputerDatabase computerDatabase = new ComputerMapDatabase();
 
         computerDatabase.save(computer1);
         computerDatabase.save(computer2);
@@ -29,6 +29,8 @@ public class Main {
 
         Computer computer1FromDB = computerDatabase.findById(1L);
         System.out.println(computer1FromDB);
+
+        System.out.println(computerDatabase.findAllByRam(32));
     }
 }
 

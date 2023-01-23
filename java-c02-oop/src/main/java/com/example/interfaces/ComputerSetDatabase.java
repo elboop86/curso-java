@@ -2,6 +2,7 @@ package com.example.interfaces;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class ComputerSetDatabase implements ComputerDatabase {
 
@@ -28,6 +29,21 @@ public class ComputerSetDatabase implements ComputerDatabase {
             }
         }
         return null;
+    }
+
+    @Override
+    public List<Computer> findAllByRam(Integer ram) {
+        if(ram == null || ram <= 0)
+            return null;
+
+        List<Computer> computersByRam = new ArrayList<>();
+
+        for (Computer computer : database)
+            if (computer.getRam() == ram)
+                computersByRam.add(computer);
+
+
+        return computersByRam;
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.interfaces;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
 Declara métodos
@@ -18,9 +19,12 @@ Los métodos de la interfaz son abstractos, es decir, solo se declaran no tienen
  */
 public interface ComputerDatabase {
 
+    // se declara la signatura de los métodos, pero no se proporciona el cuerpo
     boolean save(Computer computer);
 
-    ArrayList<Computer> findAll();
+    List<Computer> findAll();
 
     Computer findById(Long id);
+
+    List<Computer> findAllByRam(Integer ram);
 }
