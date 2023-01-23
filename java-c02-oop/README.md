@@ -324,3 +324,13 @@ Saludo saludo2 = new SaludorInformal();
 
 ### instanceof
 
+Operador para comprobar si un objeto es de determinada clase/interfaz.
+
+
+```java
+
+if(account instanceof SavingsAccount){
+	System.out.println("Se trata de una cuenta de ahorro!")
+}
+```
+
