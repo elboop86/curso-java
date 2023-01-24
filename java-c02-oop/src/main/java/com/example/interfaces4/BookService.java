@@ -22,7 +22,7 @@ public interface BookService {
     Book create(Book book);
 
     // actualizar libro existente
-    Book update(Book book);
+    Book update(Book bookToUpdate);
 
     // borrar
     boolean removeById(Long id);

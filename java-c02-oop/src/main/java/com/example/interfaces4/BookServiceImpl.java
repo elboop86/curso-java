@@ -17,8 +17,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book findById(Long id) {
 
-        for (Book book : database){
-            if (book.getId() == id){
+        for (Book book : database) {
+            if (book.getId() == id) {
                 return book;
             }
         }
@@ -29,17 +29,17 @@ public class BookServiceImpl implements BookService {
     public List<Book> findAllByNumPagesBetween(int min, int max) {
         List<Book> filteredBooks = new ArrayList<>();
 
-        if(min <= 0) // límite inferior
+        if (min <= 0) // límite inferior
             return filteredBooks;
 
-        if(max <= 0) // límite superior
+        if (max <= 0) // límite superior
             return filteredBooks;
 
-        if(min >= max) // comprobar que no se hayan intercambiado
+        if (min >= max) // comprobar que no se hayan intercambiado
             return filteredBooks;
 
         for (Book book : database) {
-            if(book.getNumPages() >= min && book.getNumPages() <= max) {
+            if (book.getNumPages() >= min && book.getNumPages() <= max) {
                 filteredBooks.add(book);
             }
         }
@@ -51,7 +51,7 @@ public class BookServiceImpl implements BookService {
     public Book create(Book book) {
         // Comprobar que no tiene ya un id asignado
         if (book.getId() != null)
-            return null;
+            return null; // entonces es una actualización
 
         // Validar el libro: comprobar título, número mínimo de pages
 
@@ -83,12 +83,38 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book update(Book book) {
+    public Book update(Book bookToUpdate) {
+        // Comprobar que ya tiene un id
+        if (bookToUpdate.getId() == null)
+            return null; // entonces es una creación
+
+        // encontrar el libro y modificarlo
+        for (Book book : database) {
+            if (book.getId() == bookToUpdate.getId()) {
+                // cambiar solo aquellos atributos que nos interesen en lugar de sustituir el objeto entero
+                book.setTitle(bookToUpdate.getTitle());
+                book.setDescription(bookToUpdate.getDescription());
+                book.setNumPages(bookToUpdate.getNumPages());
+                book.setAvailable(bookToUpdate.getAvailable());
+                book.setPrice(bookToUpdate.getPrice());
+                book.setEndDate(bookToUpdate.getEndDate());
+                return book;
+            }
+        }
+
         return null;
     }
 
     @Override
     public boolean removeById(Long id) {
+
+        for (Book book : database) {
+            if (book.getId() == id) {
+                database.remove(book);
+                return true;
+            }
+        }
         return false;
+
     }
 }
