@@ -1,5 +1,6 @@
 package com.example.interfaces4;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,17 @@ public class BookServiceImpl implements BookService {
     // Base de datos
     private List<Book> database = new ArrayList<>();
     private Long id = 0L;
+
+    public BookServiceImpl(){
+        // datos demo
+        Book book1 = new Book(null, "book1", "d1", 200, "111A", "spanish", true, 20.0, LocalDate.now(), null);
+        Book book2 = new Book(null, "book2", "d2", 150, "BBBA", "spanish", true, 20.0, LocalDate.now(), null);
+        Book book3 = new Book(null, "book3", "d3", 100, "CCCA", "spanish", true, 20.0, LocalDate.now(), null);
+        this.create(book1);
+        this.create(book2);
+        this.create(book3);
+    }
+
 
     @Override
     public List<Book> findAll() {
