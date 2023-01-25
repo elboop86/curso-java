@@ -146,7 +146,7 @@ public class House {
 
 
 
-## 8. Interfaces
+## 7. Interfaces
 
 Una interfaz es un mecanismo de programación orientada a objetos para promover el código limpio y desacoplado con mejor mantenibilidad.
 
@@ -156,7 +156,7 @@ Declara métodos. Es necesario crear clases que implementen métodos de las inte
 
 Nota: no confundir con interfaces de usuario.
 
-### Ejemplo 1:
+### Ejemplo 1
 
 * Interfaz: ComputerDatabase
 	* Implementación 1 (clase): ComputerListDatabase
@@ -166,7 +166,7 @@ Main -> ComputerDatabase
 * new ComputerListDatabase() o new ComputerSetDatabase()
 
 
-### Ejemplo 2:
+### Ejemplo 2
 
 * Interfaz: ProductDatabase
 	* Implementación 1 (clase): ProductMySQLDatabase
@@ -194,6 +194,25 @@ Un coche tiene un filtro de aceite que puede ser reemplazado por otro filtro de 
 En este caso el hueco del filtro de aceite y la acción filtrar aceite serían la interfaz, mientras que un filtro en concreto sería la implementación la cuál podemos quitar y poner otra en cualquier momento y que todo siga exactamente igual.
 
 Si de lo contrario el filtro va soldado al motor (sin interfaz), entonces para cambiarlo obliga a cambiar medio motor.
+
+
+### Ejemplo 4
+
+Tarea 1 : dar de comer a un caballo
+Empleado 1: da de comer al caballo tirando la alfafa por encima
+Empleado 2: da de comer al caballo poniendo la alfalfa en el suelo
+Empleado 3: da de comer al caballo poniendo la alfalfa en un cubo
+
+La tarea común es "dar de comer al caballo" y cada empleado hace esa tarea y logra el mismo objetivo pero de forma diferente.
+
+
+Tarea 1: extraer productos de una base de datos
+Implementación 1 (mysql): trae los productos haciendo una consulta SELECT a MySQL
+Implementación 2 (postgresql): trae los productos haciendo consulta SELECT a PostgreSQL
+Implementación 3 (mongodb): trae los productos haciendo una query a MongoDB
+
+La tarea común es "traer los productos almacenados" y cada implementación hace esa tarea y logra el mismo objetivo pero utilizando una base de datos diferentes.
+
 
 ### Abstracto vs concreto
 
@@ -234,23 +253,6 @@ ComputerDatabase computerDatabase = new ComputerListDatabase();
 ```
 
 
-### Ejemplo más cotidiano
-
-Tarea 1 : dar de comer a un caballo
-Empleado 1: da de comer al caballo tirando la alfafa por encima
-Empleado 2: da de comer al caballo poniendo la alfalfa en el suelo
-Empleado 3: da de comer al caballo poniendo la alfalfa en un cubo
-
-La tarea común es "dar de comer al caballo" y cada empleado hace esa tarea y logra el mismo objetivo pero de forma diferente.
-
-
-Tarea 1: extraer productos de una base de datos
-Implementación 1 (mysql): trae los productos haciendo una consulta SELECT a MySQL
-Implementación 2 (postgresql): trae los productos haciendo consulta SELECT a PostgreSQL
-Implementación 3 (mongodb): trae los productos haciendo una query a MongoDB
-
-La tarea común es "traer los productos almacenados" y cada implementación hace esa tarea y logra el mismo objetivo pero utilizando una base de datos diferentes.
-
 ### Polimorfismo
 
 ```java
@@ -271,4 +273,7 @@ if(account instanceof SavingsAccount){
 	System.out.println("Se trata de una cuenta de ahorro!")
 }
 ```
+
+
+### Herencia
 

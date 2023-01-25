@@ -31,6 +31,8 @@ La palabra ``throw`` permite lanzar excepciones. El objetivo es fallar temprano 
 
 ## Excepciones propias
 
+Es conveniente crear excepciones propias para cada tipo de error que pueda producirse y así tener los errores mejor identificados y controlados.
+
 ```java
 public class BookNotFoundException extends RuntimeException {  
     public BookNotFoundException(String s) {  
