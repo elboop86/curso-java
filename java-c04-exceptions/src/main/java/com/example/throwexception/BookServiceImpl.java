@@ -16,9 +16,13 @@ public class BookServiceImpl implements BookService {
         Book book1 = new Book(null, "book1", "d1", 200, "111A", "spanish", true, 20.0, LocalDate.now(), null);
         Book book2 = new Book(null, "book2", "d2", 150, "BBBA", "spanish", true, 20.0, LocalDate.now(), null);
         Book book3 = new Book(null, "book3", "d3", 100, "CCCA", "spanish", true, 20.0, LocalDate.now(), null);
-        this.create(book1);
-        this.create(book2);
-        this.create(book3);
+        try {
+            this.create(book1);
+            this.create(book2);
+            this.create(book3);
+        } catch(InvalidBookData e){
+            System.out.println("No se ha podido inicializar la base de datos de libros");
+        }
     }
 
 
@@ -73,9 +77,11 @@ public class BookServiceImpl implements BookService {
             return null;
 
         // Validar el libro: comprobar título, número mínimo de pages
-        if(book.getTitle().isEmpty() || book.getTitle().length() < 50)
+        if(book.getTitle().isEmpty() || book.getTitle().length() < 3)
             throw new InvalidBookData("Título no pueder vacío o inferior a 50 caracteres");
 
+        if(book.getPrice() == null || book.getPrice() <= 0 || book.getPrice() >= 500.0)
+            throw new InvalidBookData("Precio debe ser mayor que cero y menor que 500");
 
         Long id = this.generateId();
         book.setId(id);
