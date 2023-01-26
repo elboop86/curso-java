@@ -8,7 +8,9 @@ public class LocalDateTimeDemo {
 
         // creación
         LocalDateTime date1 = LocalDateTime.of(2023, 5, 24, 10, 30);
+        System.out.println(date1);
         LocalDateTime date2 = LocalDateTime.now();
+        System.out.println(date2);
 
         System.out.println(date1.getYear());
         System.out.println(date1.getMonthValue());
