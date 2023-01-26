@@ -1,5 +1,6 @@
 package com.example.exceptionloops;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -81,6 +82,9 @@ public class ScannerReader {
         return text;
     }
 
+    public LocalDate readLocalDate(String attribute) {
+        return null;
+    }
 
     public void close(){
         scanner.close();

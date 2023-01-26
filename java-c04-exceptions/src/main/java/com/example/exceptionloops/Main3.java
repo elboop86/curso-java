@@ -27,6 +27,7 @@ public class Main3 {
                 reader.readBoolean("availability"),
                 reader.readDouble("price"),
                 LocalDate.now(),
+                // TODO: utilizar reader.readLocalDate()
                 LocalDate.of(
                         reader.readInt("year"),
                         reader.readInt("month"),
