@@ -156,6 +156,23 @@ Declara métodos. Es necesario crear clases que implementen métodos de las inte
 
 Nota: no confundir con interfaces de usuario.
 
+### implements
+
+La palabra clave para implementar una interfaz es implements:
+
+```java
+public interface Saludo {  
+    String saludar();  
+}
+
+public class SaludoFormal implements Saludo {  
+    @Override  
+    public String saludar() {  
+        return "Ladies and Gentlemen!";  
+    }  
+}
+```
+
 ### Ejemplo 1
 
 * Interfaz: ComputerDatabase
@@ -275,5 +292,64 @@ if(account instanceof SavingsAccount){
 ```
 
 
-### Herencia
+## 8. Herencia
+
+Mecanismo de reutilización de código. Permite evitar duplicar código (atributos, métodos) a la hora de crear nuevas clases.
+
+Términos:
+
+Clase superior en la herencia
+- Clase padre  
+- Clase base  
+- Superclase
+
+Clase hija que utiliza extends para extender a otra:
+- Clase hija  
+- Clase derivada  
+- Subclase  
+
+Permite formar jerarquías de clases.
+
+Nota: no se admite herencia múltiples, es decir, no se puede hacer **extends** de 2 clases a la vez.
+
+No obstante sí se puede hacer **implements** de más de una interfaz a la vez.
+
+### extends
+
+* Clase base: **Vehicle**
+	* Clase hija 1: **Car**
+		* Clase hija 1: ElectricCar
+		* Clase hija 2: CombustionCar
+		* Clase hija 3: HydrogenCar
+	* Clase hija 2: **MotorCycle**
+	* Clase hija 3: **Truck**
+
+```java
+public class Vehicle { // Clase base
+// ... atributos y métodos ...
+}
+
+public class Car extends Vehicle { // Clase hija 1
+// ... atributos y métodos heredados de Vehicle ...
+// ... atributos y métodos propios ...
+}
+
+public class MotorCycle extends Vehicle { // Clase hija 2
+// ... atributos y métodos heredados de Vehicle ...
+// ... atributos y métodos propios ...
+}
+```
+
+### super
+
+La palabra super permite invocar a la clase superior desde una clase hija.
+
+Se utiliza normalmente para invocar al constructor de la clase superior para rellenar los atributos heredados:
+
+```java
+public Car(Integer numWheels, String color, Integer numPassengers){  
+    super(numWheels, color);
+    this.numPassengers = numPassengers;  
+}
+```
 
