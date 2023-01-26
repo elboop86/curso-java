@@ -48,6 +48,11 @@ public class LocalDateDemo {
         System.out.println(date1.minusYears(1));
         System.out.println(date1); // la original se mantiene sin modificar
 
+        // Comprobar si una fecha está antes de otra fecha
+        boolean result1 = date1.isBefore(date2);
+        // Comprobar si una fecha está después de otra fecha
+        boolean result2 = date1.isAfter(date2);
+
         // Pasar de String a LocalDate
         // Formato: YYYY-MM-dd
         LocalDate date4 = LocalDate.parse("2023-05-21");

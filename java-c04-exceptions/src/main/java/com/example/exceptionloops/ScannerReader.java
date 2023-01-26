@@ -86,6 +86,10 @@ public class ScannerReader {
         return null;
     }
 
+    public LocalDate readLocalTime(String attribute) {
+        return null;
+    }
+
     public void close(){
         scanner.close();
     }
