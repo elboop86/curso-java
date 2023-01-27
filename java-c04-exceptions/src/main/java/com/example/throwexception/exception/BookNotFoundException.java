@@ -1,7 +1,8 @@
 package com.example.throwexception.exception;
 
-// No comprobada
+// NO comprobada
 public class BookNotFoundException extends RuntimeException {
-    public BookNotFoundException(String s) {
+    public BookNotFoundException(String message) {
+        super(message);
     }
 }

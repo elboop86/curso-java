@@ -13,7 +13,7 @@ public class Main1 {
         // try catch
         try {
             long option = scanner.nextLong();
-        } catch(InputMismatchException e){
+        } catch (InputMismatchException e){
             e.printStackTrace();
         }
 

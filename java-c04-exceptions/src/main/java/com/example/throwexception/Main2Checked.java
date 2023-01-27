@@ -1,5 +1,6 @@
 package com.example.throwexception;
 
+
 import com.example.throwexception.exception.InvalidBookData;
 
 /*
@@ -20,6 +21,8 @@ public class Main2Checked {
         // Te obliga a utilizar throws (relanzar la excepción) o capturarla con try catch para gestionarla
         try {
             bookService.create(book);
+
+        // EXCEPCIÓN COMPROBADA: estamos obligados a capturar la excepción o a propagarla con throws en el método
         } catch (InvalidBookData e) {
             e.printStackTrace();
         }

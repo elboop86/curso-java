@@ -10,6 +10,7 @@ Por ejemplo: 2023-02-14
 
 ```java
 LocalDate date1 = LocalDate.of(2023, 1, 1);
+LocalDate date2 = LocalDate.now(); // hoy
 ```
 
 

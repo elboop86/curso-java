@@ -22,7 +22,8 @@ public class Main2 {
             // excepcion 3
             int[] array = new int[2];
             array[5] = 5;
-        } catch(InputMismatchException e){
+
+        } catch(InputMismatchException e) {
             e.printStackTrace();
 
         } catch (ArithmeticException e) {

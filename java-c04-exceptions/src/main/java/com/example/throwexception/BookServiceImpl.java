@@ -45,6 +45,7 @@ public class BookServiceImpl implements BookService {
             }
         }
 
+        // EXCEPCIÓN NO COMPROBADA: no obliga poner throws en el método ni a capturar
 //        throw new NoSuchElementException("No se ha encontrado el libro solicitado");
         throw new BookNotFoundException("No se ha encontrado el libro solicitado");
     }
@@ -77,6 +78,8 @@ public class BookServiceImpl implements BookService {
             return null;
 
         // Validar el libro: comprobar título, número mínimo de pages
+
+        // EXCEPCIÓN COMPROBADA: obliga a poner throws
         if(book.getTitle().isEmpty() || book.getTitle().length() < 3)
             throw new InvalidBookData("Título no pueder vacío o inferior a 50 caracteres");
 

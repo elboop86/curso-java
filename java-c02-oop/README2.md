@@ -44,14 +44,29 @@
 		* Se utiliza una estructura de datos como atributo, por ejemplo una lista de coches.
 
 
-* Interfaces (avanzado)
-	* Crear una interfaz (ABSTRACTO)
-	* Crear una clase (CONCRETO) que implementa la interfaz: **implements**
+* Interfaces (avanzado) (**implements**)
+	* Crear una **interfaz** (ABSTRACTO)
+	* Crear una **clase** (CONCRETO) que implementa la interfaz: **implements**
 	* Ejemplo implementar 1 interfaz:
 		* `public class SaludoFormal implements Saludo { }`
 	* Ejemplo implementar 2 interfaces: 
 		* `public class SaludoFormal implements Saludo, Despedida { }`
+	* Se utilizan para definir operaciones
+	* Se puede cambiar una implementación por otra
+	* El objetivo es DESACOPLAR el código
+
+* Polimorfismo (más avanzado)
+	* Múltiples formas
+	* interfaces
+		* En el caso de las **interfaces** se dice que cada clase implementación es una forma, pero todas ellas actúan como un mismo tipo de objeto (interfaz)
+		* A la izquierda el tipo **abstracto**, a la derecha el tipo **concreto**:
+		* `ComputerDatabase database = new ComputerListDatabase();`
+		* En el caso de las interfaces quiere decir que a la izquierda la interfaz y a la derecha la clase.
 
 
+* Herencia (avanzado) (**extends**)
+	* Permite jerarquías de clases
+	* Sirve para reutilizar código y evitar duplicar código
+	* El código de una superclase es heredado por una clase hija
 
 

@@ -19,7 +19,7 @@ public class ComputerListDatabase implements ComputerDatabase {
 
     // getter y setter
 
-    // métodos
+    // MÉTODOS CONCRETOS (IMPLEMENTAN LOS MÉTODOS ABSTRACTOS)
     @Override
     public boolean save(Computer computer) {
         return database.add(computer);

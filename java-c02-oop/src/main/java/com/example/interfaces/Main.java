@@ -17,9 +17,10 @@ public class Main {
 
 
         // tipo abstracto (interfaz)                 tipo concreto (clase)
+
 //        ComputerDatabase computerDatabase = new ComputerListDatabase();
-        ComputerDatabase computerDatabase = new ComputerSetDatabase();
-//        ComputerDatabase computerDatabase = new ComputerMapDatabase();
+//        ComputerDatabase computerDatabase = new ComputerSetDatabase();
+        ComputerDatabase computerDatabase = new ComputerMapDatabase();
 
         computerDatabase.save(computer1);
         computerDatabase.save(computer2);

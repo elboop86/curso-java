@@ -23,7 +23,7 @@ public class Main {
 //        ArrayList<Car> cars = new ArrayList<>();
         cars.add(car1);
         cars.add(car2);
-        cars.add(car2); // duplicado
+        cars.add(car2); // duplicado, no lanza excepción
         cars.add(car2Duplicated); // duplicado
         cars.add(car3);
 

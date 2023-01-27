@@ -1,7 +1,7 @@
 
 # Estructuras de datos
 
-### Listas
+### Listas (List)
 
 Una lista es un array dinámico, es decir, permite agregar nuevos elementos pero también borrarlos, actualizarlos, recuperarlos (CRUD).
 
@@ -19,9 +19,11 @@ var employees = new ArrayList<Employee>();
 
 // usando interfaces: polimorfismo
 List<Employee> employees = new ArrayList<>();
+List<Employee> employees = new CopyOnWriteArrayList<>();
+List<Employee> employees = new LinkedList<>();
 ```
 
-### Set
+### Conjuntos (Set)
 
 Un conjunto es una estructura de datos que no admite duplicados y tampoco conserva el orden por lo que puede ser más óptimo que una lista dinámica.
 
@@ -41,7 +43,7 @@ Set<Employee> employees = new HashSet<>();
 
 ```
 
-### Mapa
+### Mapa (Map)
 
 Estructura de pares de clave valor. 
 
@@ -59,5 +61,8 @@ var employees = new HashMap<String, Employee>();
 // usando interfaces: polimorfismo
 // izquierda el tipo abstracto (interfaz) y a la derecha la clase concreta
 Map<String, Employee> employees = new HashMap<>();
+
+// ejemplo agrupación de datos (avanzado)
+Map<EmployeeType, List<Employee>> employees = new HashMap<>();
 ```
 

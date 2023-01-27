@@ -27,6 +27,9 @@ public class Main1Unchecked {
             Book book1 = bookService.findById(bookId);
             double priceWithIVA = book1.getPrice() + book1.getPrice() * 0.21;
             System.out.println(book1);
+
+
+            // EXCEPCIONES NO COMPROBADAS: no estamos obligados a poner el try catch
         } catch (IllegalArgumentException | BookNotFoundException e){
             e.printStackTrace();
             System.out.println(bookService.findAll());

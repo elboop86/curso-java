@@ -19,7 +19,7 @@ Los métodos de la interfaz son abstractos, es decir, solo se declaran no tienen
  */
 public interface ComputerDatabase {
 
-    // se declara la signatura de los métodos, pero no se proporciona el cuerpo
+    // MÉTODOS ABSTRACTOS: se declara la signatura de los métodos, pero no se proporciona el cuerpo
     boolean save(Computer computer);
 
     List<Computer> findAll();
