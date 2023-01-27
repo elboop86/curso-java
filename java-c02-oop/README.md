@@ -108,7 +108,7 @@ Se usa normalmente para agrupar un número fijo de datos como por ejemplo: días
 
 Un ejemplo: sirven para filtrar un dato en base a esa enumeración. Por ejemplo: filtrar productos por categoría.
 
-## 6. Asociaciones entre clases
+## 6. Asociaciones entre clases (avanzado)
 
 Una clase puede tener relación con otra clase.
 

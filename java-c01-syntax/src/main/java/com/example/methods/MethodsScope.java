@@ -10,7 +10,6 @@ public class MethodsScope {
 
 
     public static void main(String[] args) {
-
         double result = calculateIVA(100);
         System.out.println(result);
 
@@ -37,7 +36,6 @@ public class MethodsScope {
             System.out.println(i);
         }
     }
-
 
     private static double calculateIVA(int number) {
         number = 121;

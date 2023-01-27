@@ -1,5 +1,8 @@
 package com.example.encapsulation.methods;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 public class ShopCart {
 
     Integer quantity;

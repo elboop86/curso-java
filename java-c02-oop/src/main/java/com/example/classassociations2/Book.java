@@ -9,13 +9,14 @@ public class Book {
     private String title;
     private Double price;
 
-    // opción sin asociación con otra clase
-    // private List<Double> ratings = new ArrayList<>();
-
-    // opción con asociación a otra clase
+    // asociación de a muchos
     private List<Rating> ratings = new ArrayList<>();
 
-    // TODO añadir Author
+    // asociación de a uno
+    private Author author;
+
+    // asociación de a uno
+    private Editorial editorial;
 
     public Book() {
     }
