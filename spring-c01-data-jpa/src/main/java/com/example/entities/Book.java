@@ -1,13 +1,17 @@
-package com.example;
+package com.example.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Book {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Generar id automáticamente
     private Long id;
+
     private String title;
     private Double price;
     private Integer numPages;
