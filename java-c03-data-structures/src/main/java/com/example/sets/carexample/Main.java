@@ -1,6 +1,5 @@
 package com.example.sets.carexample;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 /*
@@ -23,7 +22,7 @@ public class Main {
 //        ArrayList<Car> cars = new ArrayList<>();
         cars.add(car1);
         cars.add(car2);
-        cars.add(car2); // duplicado, no lanza excepción
+        cars.add(car2); // duplicado, no lanza excepcion
         cars.add(car2Duplicated); // duplicado
         cars.add(car3);
 

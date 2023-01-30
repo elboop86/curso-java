@@ -27,6 +27,9 @@ public class Main {
             vehicle.speedUp(); // Funciona tanto en coches como en motos
             // vehicle.getHasCopilot(); // No funciona porque este método es específico de motos, solo podemos usar los heredados
 
+            if(vehicle instanceof MotorCycle) // solo será true para las motos, no para los coches
+                System.out.println(((MotorCycle)vehicle).getHasCopilot());
+
             if(vehicle instanceof MotorCycle motorCycle) // solo será true para las motos, no para los coches
                 System.out.println(motorCycle.getHasCopilot());
 
