@@ -27,10 +27,13 @@ public class Author {
 
     private Double salary;
 
+    @OneToOne // Un autor tiene una dirección, una dirección solo puede pertenecer a un mismo autor
+    private Address address;
+
     public Author() {
     }
 
-    public Author(Long id, String fullName, String nif, String email, LocalDate birthDate, Boolean active, Double salary) {
+    public Author(Long id, String fullName, String nif, String email, LocalDate birthDate, Boolean active, Double salary, Address address) {
         this.id = id;
         this.fullName = fullName;
         this.nif = nif;
@@ -38,6 +41,7 @@ public class Author {
         this.birthDate = birthDate;
         this.active = active;
         this.salary = salary;
+        this.address = address;
     }
 
     public Long getId() {
@@ -94,6 +98,14 @@ public class Author {
 
     public void setSalary(Double salary) {
         this.salary = salary;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
