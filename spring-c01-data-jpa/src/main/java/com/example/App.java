@@ -34,9 +34,9 @@ public class App {
 
 		// Crear y guardar un libro en base de datos
 		System.out.println("==================== SAVE BOOK ====================");
-		Book book1 = new Book(null, "book1", 9.99, 150);
-		Book book2 = new Book(null, "book2", 19.99, 366);
-		Book book3 = new Book(null, "book3", 29.99, 450);
+		Book book1 = new Book("book1", 9.99, 150, null);
+		Book book2 = new Book("book2", 19.99, 366, null);
+		Book book3 = new Book("book3", 29.99, 450, null);
 		bookRepository.save(book1); // 1
 		bookRepository.save(book2); // 2
 		bookRepository.save(book3); // 3
@@ -108,7 +108,7 @@ public class App {
 		System.out.println(employeeRepo.findAll());
 
 
-		// CRUD AUTHOR - ADDRESS - ASOCIACIÓN ONE TO ONE
+		// ASOCIACIÓN ONE TO ONE: AUTHOR - ADDRESS
 
 
 		AddressRepository addressRepo = spring.getBean(AddressRepository.class);
@@ -125,6 +125,22 @@ public class App {
 		authorRepo.save(author1);
 		authorRepo.save(author2);
 
+
+
+		// ASOCIACIÓN MANY TO ONE: BOOK - AUTHOR
+
+		Author author3 = new Author(null, "author3", "333A", "a3@email.com", LocalDate.now(), true, 3000.99, null);
+		Author author4 = new Author(null, "author4", "444A", "a4@email.com", LocalDate.now(), true, 3000.99, null);
+		authorRepo.save(author3);
+		authorRepo.save(author4);
+
+		Book book4 = new Book("book4", 29.99, 450, author3);
+		Book book5 = new Book("book5", 29.99, 450, author3);
+		Book book6 = new Book("book6", 29.99, 450, author3);
+		Book book7 = new Book("book7", 29.99, 450, author4);
+		Book book8 = new Book("book8", 29.99, 450, author4);
+
+		bookRepository.saveAll(List.of(book4, book5, book6, book7, book8));
 
 
 

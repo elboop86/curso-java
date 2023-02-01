@@ -1,6 +1,11 @@
 
 # Spring
 
+Enlace para crear proyecto:
+
+https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.0.2&packaging=jar&jvmVersion=19&groupId=com.example&artifactId=demo&name=spring-c01-data-jpa&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example&dependencies=data-jpa,mysql
+
+
 ## Configuración
 
 Este proyecto Spring Boot contiene:
@@ -19,9 +24,17 @@ En application.properties se añaden las propiedades de configuración para cone
 
 ## Asociaciones
 
-De uno a uno
+### Uno a uno
+
 * @OneToOne
 * @JoinColumn(unique = true)
+
+Author tiene un Address y un Address pertenece únicamente a un solo Author.
+
+
+### Muchos a uno
+
+* @ManyToOne
 
 ## Excepciones
 

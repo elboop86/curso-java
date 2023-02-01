@@ -1,9 +1,6 @@
 package com.example.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Book {
@@ -16,14 +13,17 @@ public class Book {
     private Double price;
     private Integer numPages;
 
+    @ManyToOne
+    private Author author;
+
     public Book() {
     }
 
-    public Book(Long id, String title, Double price, Integer numPages) {
-        this.id = id;
+    public Book(String title, Double price, Integer numPages, Author author) {
         this.title = title;
         this.price = price;
         this.numPages = numPages;
+        this.author = author;
     }
 
     public Long getId() {
@@ -56,6 +56,14 @@ public class Book {
 
     public void setNumPages(Integer numPages) {
         this.numPages = numPages;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override
