@@ -1,13 +1,18 @@
 package com.example;
 
+import com.example.entities.Address;
+import com.example.entities.Author;
 import com.example.entities.Book;
 import com.example.entities.Employee;
+import com.example.repositories.AddressRepository;
+import com.example.repositories.AuthorRepository;
 import com.example.repositories.BookRepository;
 import com.example.repositories.EmployeeRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -101,6 +106,26 @@ public class App {
 		System.out.println("==================== DELETE BY ID EMPLOYEE ====================");
 		employeeRepo.deleteById(1L);
 		System.out.println(employeeRepo.findAll());
+
+
+		// CRUD AUTHOR - ADDRESS - ASOCIACIÓN ONE TO ONE
+
+
+		AddressRepository addressRepo = spring.getBean(AddressRepository.class);
+		Address address1 = new Address(null, "street1", "madrid", "spain");
+		Address address2 = new Address(null, "street2", "madrid", "spain");
+		addressRepo.save(address1);
+		addressRepo.save(address2);
+
+
+		AuthorRepository authorRepo = spring.getBean(AuthorRepository.class);
+		// cada author tiene un address distinto, no se pueden repetir
+		Author author1 = new Author(null, "author1", "111A", "a1@email.com", LocalDate.now(), true, 3000.0, address1);
+		Author author2 = new Author(null, "author2", "222A", "a2@email.com", LocalDate.now(), true, 3000.0, address2);
+		authorRepo.save(author1);
+		authorRepo.save(author2);
+
+
 
 
 	}

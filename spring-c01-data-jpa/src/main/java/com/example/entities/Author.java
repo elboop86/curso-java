@@ -28,6 +28,7 @@ public class Author {
     private Double salary;
 
     @OneToOne // Un autor tiene una dirección, una dirección solo puede pertenecer a un mismo autor
+    @JoinColumn(unique = true)
     private Address address;
 
     public Author() {
