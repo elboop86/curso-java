@@ -36,6 +36,23 @@ Author tiene un Address y un Address pertenece únicamente a un solo Author.
 
 * @ManyToOne
 
+Muchos Book tienen un mismo Author.
+
+Many books to One Author.
+
+Se genera una columna **author_id** en la tabla **books**.
+
+
+### Uno a Muchos
+
+* @OneToMany
+
+Un Author tiene muchos Books.
+
+One Author to Many Books.
+
+
+
 ## Excepciones
 
 ### InvalidDataAccessApiUsageException

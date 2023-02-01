@@ -13,6 +13,8 @@ public class Book {
     private Double price;
     private Integer numPages;
 
+    // crea una nueva columna llamada author_id con el id del autor, varios libros pueden tener el mismo id de autor
+    // owner de la relación
     @ManyToOne
     private Author author;
 

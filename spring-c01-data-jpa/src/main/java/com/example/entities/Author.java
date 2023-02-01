@@ -3,6 +3,8 @@ package com.example.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Author {
@@ -30,6 +32,10 @@ public class Author {
     @OneToOne // Un autor tiene una dirección, una dirección solo puede pertenecer a un mismo autor
     @JoinColumn(unique = true)
     private Address address;
+
+    // mappedBy indica que ya existe una columna en la tabla book por tanto se guarda allí la relación, no hay que hacer nada aquí
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
+    private List<Book> books = new ArrayList<>();
 
     public Author() {
     }
@@ -107,6 +113,14 @@ public class Author {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     @Override

@@ -143,6 +143,12 @@ public class App {
 		bookRepository.saveAll(List.of(book4, book5, book6, book7, book8));
 
 
+		// ASOCIACIÓN ONE TO MANY: AUTHOR - Books
+		// Ya está mapeada gracias al ejemplo anterior de ManyToOne, solo hemos necesario un @OneToMany con mappedBy
+		Author author3FromDB = authorRepo.findById(3L).get();
+		System.out.println(author3FromDB.getBooks()); // desde el AUTHOR se pueden recuperar los BOOKs
+
+
 
 	}
 
