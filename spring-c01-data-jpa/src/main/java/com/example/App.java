@@ -1,15 +1,10 @@
 package com.example;
 
-import com.example.entities.Address;
-import com.example.entities.Author;
-import com.example.entities.Book;
-import com.example.entities.Employee;
-import com.example.repositories.AddressRepository;
-import com.example.repositories.AuthorRepository;
-import com.example.repositories.BookRepository;
-import com.example.repositories.EmployeeRepository;
+import com.example.entities.*;
+import com.example.repositories.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.Cache;
 import org.springframework.context.ApplicationContext;
 
 import java.time.LocalDate;
@@ -150,6 +145,32 @@ public class App {
 
 
 
+
+		// ASOCIACIÓN MANY TO MANY: Book y Category
+
+		Category category1 = new Category("novela", 12);
+		Category category2 = new Category("terror", 18);
+		Category category3 = new Category("scifi", 7);
+		Category category4 = new Category("bio", 7);
+		CategoryRepository categoryRepo = spring.getBean(CategoryRepository.class);
+
+		categoryRepo.saveAll(List.of(category1, category2, category3, category4));
+
+		Book book9 = new Book("book9", 29.99, 450, null);
+		book9.getCategories().add(category1);
+		book9.getCategories().add(category3);
+		bookRepository.save(book9);
+
+		Book book10 = new Book("book10", 29.99, 450, null);
+		book10.getCategories().add(category3);
+		book10.getCategories().add(category4);
+		bookRepository.save(book10);
+
+		Book book11 = new Book("book11", 29.99, 450, null);
+		book11.getCategories().add(category1);
+		book11.getCategories().add(category2);
+		book11.getCategories().add(category3);
+		bookRepository.save(book11);
 	}
 
 }

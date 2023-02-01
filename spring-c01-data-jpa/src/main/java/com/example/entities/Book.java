@@ -2,6 +2,9 @@ package com.example.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Book {
 
@@ -17,6 +20,9 @@ public class Book {
     // owner de la relación
     @ManyToOne
     private Author author;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Category> categories = new ArrayList<>();
 
     public Book() {
     }
@@ -66,6 +72,14 @@ public class Book {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 
     @Override

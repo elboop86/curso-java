@@ -22,6 +22,7 @@ Creación de entidades usando:
 
 En application.properties se añaden las propiedades de configuración para conectarse a MySQL.
 
+
 ## Asociaciones
 
 ### Uno a uno
@@ -30,6 +31,8 @@ En application.properties se añaden las propiedades de configuración para cone
 * @JoinColumn(unique = true)
 
 Author tiene un Address y un Address pertenece únicamente a un solo Author.
+
+![[asociacion_onetoone.png]]
 
 
 ### Muchos a uno
@@ -51,7 +54,37 @@ Un Author tiene muchos Books.
 
 One Author to Many Books.
 
+Nota: cuando hay una lista, se carga a LAZY, es decir, que por defecto esos no se traen de la base de datos.
 
+Las listas por defecto no se cargan, para cargar los datos la lista hay varias opciones:
+
+* fetch = FetchType.EAGER en la anotación @OneToMany
+* Consulta en el repositorio
+* Consulta personalizada en el repositorio con @Query
+
+![[asociacion_onetomany_manytoone.png]]
+
+### Muchos a muchos
+
+* @ManyToMany
+
+Un libro puede tener muchos géneros, y a su vez y género puede estar en varios libros distintos.
+
+Se crea una tabla extra para mapear los ids de cada tabla.
+
+* book
+* book_categories
+* category
+![[asociacion_many_to_many.png]]
+
+## Generar diagrama tablas
+
+En MySQL Workbench:
+
+1. Database > Reverse Engineer
+2. Seleccionar conexión
+3. Seleccionar base de datos
+4. Darle a Next hasta que abra el diagrama
 
 ## Excepciones
 
