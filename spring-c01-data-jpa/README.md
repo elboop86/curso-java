@@ -104,3 +104,11 @@ Exception in thread "main" org.springframework.dao.DataIntegrityViolationExcepti
 ```
 
 Esto ocurre porque se está duplicando una clave única, es decir, que una columna debe ser única pero estamos repitiendo ese dato en múltiples objetos y por tanto la base de datos no lo permite y lanza excepción.
+
+
+### SQLIntegrityConstraintViolationException
+```
+SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`spring_c02`.`smartphone`, CONSTRAINT `FKvnxdatl8fprgynr5odmf803u` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`)
+```
+
+Esto se produce porque se ha intentado borrar un objeto person de la base de datos pero tiene asociados teléfonos. Es necesario desasociar esos teléfonos o borrarlos antes de borrar la persona.
