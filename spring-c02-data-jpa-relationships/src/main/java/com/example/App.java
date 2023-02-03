@@ -1,5 +1,9 @@
 package com.example;
 
+import com.example.manytomany.Student;
+import com.example.manytomany.StudentRepository;
+import com.example.manytomany.Subject;
+import com.example.manytomany.SubjectRepository;
 import com.example.manytoone.Person;
 import com.example.manytoone.PersonRepository;
 import com.example.manytoone.Smartphone;
@@ -27,6 +31,31 @@ public class App {
 		oneToOne();
 		manyToOne();
 		oneToMany();
+		manyToMany();
+	}
+
+	private static void manyToMany() {
+
+		var studentRepo = context.getBean(StudentRepository.class);
+		var subjectRepo = context.getBean(SubjectRepository.class);
+
+		// ASIGNATURAS
+		var subject1 = new Subject("matemáticas", 4);
+		var subject2 = new Subject("lengua", 3);
+		var subject3 = new Subject("biología", 3);
+		var subject4 = new Subject("física", 5);
+		subjectRepo.saveAll(List.of(subject1, subject2, subject3, subject4));
+
+		// ESTUDIANTE 1
+		var student1 = new Student("mike", "León");
+		student1.getSubjects().addAll(List.of(subject1, subject2, subject3, subject4));
+
+		// ESTUDIANTE 2
+		var student2 = new Student("bob", "Madrid");
+		student2.getSubjects().addAll(List.of(subject1, subject2, subject3, subject4));
+
+		studentRepo.saveAll(List.of(student1, student2));
+
 	}
 
 	/**
