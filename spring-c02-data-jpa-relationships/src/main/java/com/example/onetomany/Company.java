@@ -2,6 +2,11 @@ package com.example.onetomany;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Entity
 public class Company {
 
@@ -13,6 +18,10 @@ public class Company {
 
     @Column(unique = true)
     private String cif;
+
+    @OneToMany
+    @JoinTable(name = "company_credit_cards") // opcional
+    private List<CreditCard> cards = new ArrayList<>();
 
 
     public Company() {
@@ -47,6 +56,15 @@ public class Company {
 
     public Company setCif(String cif) {
         this.cif = cif;
+        return this;
+    }
+
+    public List<CreditCard> getCards() {
+        return cards;
+    }
+
+    public Company setCards(List<CreditCard> cards) {
+        this.cards = cards;
         return this;
     }
 

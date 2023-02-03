@@ -1,9 +1,6 @@
 package com.example.onetomany;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -17,7 +14,6 @@ public class CreditCard {
     private String name;
     private LocalDate expiration;
     private String ccv;
-
 
     public CreditCard() {
     }

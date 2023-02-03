@@ -4,11 +4,16 @@ import com.example.manytoone.Person;
 import com.example.manytoone.PersonRepository;
 import com.example.manytoone.Smartphone;
 import com.example.manytoone.SmartphoneRepository;
+import com.example.onetomany.Company;
+import com.example.onetomany.CompanyRepository;
+import com.example.onetomany.CreditCard;
+import com.example.onetomany.CreditCardRepository;
 import com.example.onetoone.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -21,6 +26,33 @@ public class App {
 		context = SpringApplication.run(App.class, args);
 		oneToOne();
 		manyToOne();
+		oneToMany();
+	}
+
+	/**
+	 * One To Many
+	 * One company to Many Credit cards
+	 * Una empresa tiene múltiples tarjetas de crédito. Pero una tarjeta pertenece a una única empresa
+	 */
+	private static void oneToMany() {
+
+		CompanyRepository companyRepo = context.getBean(CompanyRepository.class);
+		CreditCardRepository creditCardRepo = context.getBean(CreditCardRepository.class);
+
+		CreditCard card1 = new CreditCard("SANTANDER", LocalDate.of(2024,1,1), "321");
+		CreditCard card2 = new CreditCard("OPEN BANK", LocalDate.of(2024,1,1), "321");
+		CreditCard card3 = new CreditCard("BBVA", LocalDate.of(2024,1,1), "321");
+		CreditCard card4 = new CreditCard("CAIXABANK", LocalDate.of(2024,1,1), "321");
+		creditCardRepo.saveAll(List.of(card1, card2, card3, card4));
+
+		Company company1 = new Company("company1", "1231233F");
+		company1.getCards().add(card1);
+		company1.getCards().add(card2);
+
+		Company company2 = new Company("company2", "B32432543");
+		company2.getCards().addAll(List.of(card3, card4));
+
+		companyRepo.saveAll(List.of(company1, company2));
 	}
 
 	/**
