@@ -38,6 +38,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // puede haber varios usuarios con mismo nombre y apellido
     List<User> findAllByNameAndSurname(String name, String surname);
 
+    List<User> findAllByAddressCity(String city);
+    List<User> findAllByAddressStreetAndAddressCity(String street, String city);
 
 
 

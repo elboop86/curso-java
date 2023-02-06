@@ -32,7 +32,22 @@ public class App {
         filtrarPorTipoUsuario();
         filtrarPorSalario();
         filtrarPorEmail();
+        // Filtro por atributo de una asociación (avanzado)
+        filtrarPorDireccion();
 
+    }
+
+    private static void filtrarPorDireccion() {
+        UserRepository userRepo = context.getBean(UserRepository.class);
+
+        List<User> users1 = userRepo.findAllByAddressCity("Madrid");
+        for (User user : users1)
+            System.out.println(user);
+
+
+        List<User> users2 = userRepo.findAllByAddressStreetAndAddressCity("calle 2", "Madrid");
+        for (User user : users2)
+            System.out.println(user);
     }
 
     private static void filtrarPorEmail() {
@@ -101,7 +116,6 @@ public class App {
             System.out.println(user);
     }
 
-
     private static void filtrarPorNombre() {
         UserRepository userRepo = context.getBean(UserRepository.class);
 
@@ -119,7 +133,6 @@ public class App {
         System.out.println("================== findAllByNameAndSurname: ==================");
         userRepo.findAllByNameAndSurname("Javier", "García").forEach(System.out::println);
     }
-
 
     private static void crearDatosDemo() {
         UserRepository userRepo = context.getBean(UserRepository.class);
@@ -152,7 +165,7 @@ public class App {
                 .setSurname("García")
                 .setEmail("miguel@email.com")
                 .setUserType(UserType.PREMIUM)
-                .setAddress(new Address("calle 3", "3345", "Madrid"))
+                .setAddress(new Address("calle 2", "3345", "Madrid"))
                 .setEntryHour(LocalTime.of(11, 0))
                 .setSalary(1700.0)
                 .setBirthDate(LocalDate.of(2000, 1, 1))

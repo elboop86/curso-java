@@ -1,4 +1,4 @@
-# Entidades y sociaciones
+# Entidades y Asociaciones
 
 Sobre una clase entidad:
 * ``@Entity``
