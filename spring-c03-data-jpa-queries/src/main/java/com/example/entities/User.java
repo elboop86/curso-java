@@ -14,6 +14,8 @@ public class User {
 
     private String name;
 
+    private String surname;
+
     @Column(unique = true)
     private String email;
 
@@ -51,6 +53,15 @@ public class User {
 
     public User setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public User setSurname(String surname) {
+        this.surname = surname;
         return this;
     }
 
@@ -122,6 +133,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", userType=" + userType +
                 ", entryHour=" + entryHour +
