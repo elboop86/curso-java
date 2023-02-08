@@ -1,28 +1,24 @@
 package com.example.manytomany;
 
-import jakarta.persistence.*;
-
-import java.util.HashSet;
-import java.util.Set;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Student {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
-
     private String name;
-
     private String city;
-
-    @ManyToMany
-    private Set<Subject> subjects = new HashSet<>();
 
     public Student() {
     }
 
-    public Student(String name, String city) {
+    public Student(Long id, String name, String city) {
+        this.id = id;
         this.name = name;
         this.city = city;
     }
@@ -31,36 +27,24 @@ public class Student {
         return id;
     }
 
-    public Student setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
-        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public Student setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public Student setCity(String city) {
+    public void setCity(String city) {
         this.city = city;
-        return this;
-    }
-
-    public Set<Subject> getSubjects() {
-        return subjects;
-    }
-
-    public Student setSubjects(Set<Subject> subjects) {
-        this.subjects = subjects;
-        return this;
     }
 
     @Override

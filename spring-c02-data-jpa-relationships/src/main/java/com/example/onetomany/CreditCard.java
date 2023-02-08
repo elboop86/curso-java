@@ -1,24 +1,28 @@
 package com.example.onetomany;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.time.LocalDate;
+
 
 @Entity
 public class CreditCard {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private LocalDate expiration;
     private String ccv;
-
     public CreditCard() {
+
     }
 
-    public CreditCard(String name, LocalDate expiration, String ccv) {
+    public CreditCard(Long id, String name, LocalDate expiration, String ccv) {
+        this.id = id;
         this.name = name;
         this.expiration = expiration;
         this.ccv = ccv;
@@ -28,36 +32,32 @@ public class CreditCard {
         return id;
     }
 
-    public CreditCard setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
-        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public CreditCard setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public LocalDate getExpiration() {
         return expiration;
     }
 
-    public CreditCard setExpiration(LocalDate expiration) {
+    public void setExpiration(LocalDate expiration) {
         this.expiration = expiration;
-        return this;
     }
 
     public String getCcv() {
         return ccv;
     }
 
-    public CreditCard setCcv(String ccv) {
+    public void setCcv(String ccv) {
         this.ccv = ccv;
-        return this;
     }
 
     @Override
