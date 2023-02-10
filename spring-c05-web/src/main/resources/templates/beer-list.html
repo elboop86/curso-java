@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Beer List</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+
+<body>
+
+
+        <div class="container text-left">
+            <div class="row">
+                <h1>Listado de cervezas</h1>
+
+                <div class="col">
+                    <button type="button" class="btn btn-success">Crear nueva cerveza</button>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Alcohol</th>
+                            <th scope="col">Price (€)</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="beer: ${beers}">
+                            <td th:text="${beer.id}"></td>
+                            <td th:text="${beer.name}"></td>
+                            <td th:text="${beer.color}"></td>
+                            <td th:text="${beer.alcohol}"></td>
+                            <td th:text="${beer.price}"></td>
+                            <td>
+                                <button type="button" class="btn btn-primary">Ver</button>
+                                <button type="button" class="btn btn-success">Editar</button>
+                                <button type="button" class="btn btn-danger">Borrar</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+</body>
+</html>
