@@ -11,5 +11,5 @@ public class BackAccount {
 
     private final BankAccount bankAccount;
 
-    @GetMapping(/bankAccount);
+
 }
